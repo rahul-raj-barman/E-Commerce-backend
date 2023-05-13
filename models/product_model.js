@@ -24,6 +24,9 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  seller: {
+    type: String
+  },
   price: {
     type: Number,
     required: true
@@ -34,8 +37,7 @@ const productSchema = new mongoose.Schema({
     default: 1
   },
   category: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'CategoryModel'
+    type: String
   },
   image: {
     type: String,

@@ -12,6 +12,13 @@ const ItemsInCartSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true
+  },
+  count: {
+    type: Number,
+    required: false
+  },
+  image: {
+    type: String
   }
 }) 
 
@@ -45,9 +52,25 @@ const userSchema = new mongoose.Schema({
   phoneNumber: {
     type: String
   },
+  city: {
+    type: String
+  },
+  state: {
+    type: String
+  },
+  zipcode: {
+    type: String
+  },
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  orders: {
+    type: Array
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false
   },
   cart:[ItemsInCartSchema]
 });
